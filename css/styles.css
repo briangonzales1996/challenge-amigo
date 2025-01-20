@@ -1,0 +1,163 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #4B69FD;
+}
+.container{
+  
+
+}
+
+.container>.titulo{
+    display: flex;
+    background-color: #4B69FD;
+    height: 44.7vh;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: end;
+    font-family:'Times New Roman', Times, serif;
+    overflow: hidden;
+}
+
+
+
+
+.container>.titulo>h1{
+    font-size: 3.4rem;
+    text-align: center;
+    align-self: center;
+    color: rgb(252, 252, 252);
+    margin-top: 10px;
+    
+}
+
+
+.container>.titulo>div{
+    max-width: 440px;
+    max-height: 280px;
+    
+}
+
+
+.container>.titulo>div>img{
+    width: 100%;
+    height: 100%;
+}
+
+/* container form titulo*/
+.container>.nombres{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 70px 70px 0 0;
+    background-color: rgb(255, 255, 255);
+    min-height: 55vh;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.container>.nombres>h1{
+    font-size: 2.5rem;
+    color: #4b69fd;
+    font-weight: 600;
+    margin-top:20px ;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+/*form*/
+.container>.nombres>.nombres-form{
+    display: flex;
+    width: 600px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.container>.nombres>.nombres-form>input[type='text']{
+    padding: 14px;
+    flex-grow: 4;
+    border: 2px black solid;
+    font-size: 1.1rem;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.container>.nombres>.nombres-form>input[type='submit']{
+    padding: 14px;
+    border: 2px black solid;
+    border-radius: 0px 20px 20px 0px;
+    flex-grow: 1;
+    color: #444;
+    background-color: #c4c4c4;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.container>.nombres>.nombres-form>input[type='submit']:hover{
+    background-color: #9f9999;
+}
+
+/*usuarios*/
+.container>.nombres>.button-sorteo{
+    display: flex;
+    background-color: #fe652b;
+    padding: 10px 60px;
+    align-items: center;
+    gap: 40px;
+    color: white;
+    border-radius: 30px;
+    margin-top: 50px;
+    border: 2px black solid;
+    cursor: pointer;
+}
+.container>.nombres>.button-sorteo>div{
+    margin-top: 5px;
+}
+
+.container>.nombres>.button-sorteo:hover{
+    background-color: #eb531c;
+}
+
+/*list of participantes*/
+.container>.nombres>.nombres-sorteo{    
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.container>.nombres>.nombres-sorteo>p{
+    padding: 3px;
+    font-size: 1.4rem;
+    background-color: #fe652b;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 5px;
+    color: rgb(255, 255, 255);
+    width: 200px;
+}
+
+/*Cartel Winner*/
+.container>.nombres>.nombre-cartel-winner{
+    
+}
+.container>.nombres>.nombre-cartel-winner>p{
+    padding: 10px;
+    border-radius: 10px;
+    background-color:#4B69FD;
+    font-size: 1.7rem;
+    border: 2px black solid;
+    color: white;
+}
+
+
+
+@media screen and (max-width:600px) {
+    .container>.titulo>h1{
+        
+    }
+    .container>.nombres>.nombres-form{
+        width: 400px;
+    }
+}
