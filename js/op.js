@@ -1,15 +1,25 @@
 const usuarios = [];
 
-const addNames = (name)=>{
-    usuarios.push(name)
+const limpiarHTML = ()=>{
     const winnerConatiner = document.getElementById('cartel-winner')
     winnerConatiner.innerHTML='';
     const contenedor = document.getElementById('usuarios');
-    let fragment = document.createDocumentFragment();
     contenedor.innerHTML ='';
+    return contenedor;
+}
+
+const limpiarInput = (advertencia)=>{
+    const valueName = document.getElementById("valueNombre");
+    valueName.value = '';
+    if(advertencia)alert(advertencia);
+}
+
+const addNames = (name)=>{
+    let fragment = document.createDocumentFragment();
+    usuarios.push(name);
+    const contenedor = limpiarHTML();
     usuarios.forEach((usuario)=>{
         fragment = agregarHTML(fragment,usuario);
-        
     })
     contenedor.appendChild (fragment);
 }
@@ -46,15 +56,40 @@ const sortearUser = (e)=>{
 }
 
 
+//evaluar el nombre valido
+const agregarParticipantes = (verificar)=>{
+    const input = document.querySelector('#valueNombre');
+    console.log("esto es name ",verificar);
+    if(verificar.length>1 && isNaN(verificar)){
+        addNames(verificar);
+        input.value = '';
+    }
+    else {
+        limpiarInput();
+        alert("ingrese un nombre valido" );
+    }
+}
+
+const verificarNameRepeat = (verificar,condicion)=>{
+    for(let i=0;i<usuarios.length;i++){
+        if(usuarios[i]===verificar)condicion=true;
+    }
+    return condicion
+}
+
+
+
+
 //agregar usuario para el sorteo
 function handleClick(e) {
     e.preventDefault();
     const name = document.querySelector('#valueNombre');
-    if(name.value.length>1 && typeof name !== Number){
-        addNames(name.value)
-        name.value = "";
-    }
-    else alert("ingrese un nombre valido" );
+    const verificar = name.value.toLowerCase();
+    let condicion = false;
+    condicion = verificarNameRepeat(verificar,condicion);
+    condicion?
+    limpiarInput('El nombre ya se encuentra registrado')
+    :agregarParticipantes(verificar);
 }
 
 
@@ -63,4 +98,4 @@ function handleClick(e) {
 const add = document.querySelector("#agregar");
 const sortear = document.querySelector('#sortear');
 add.addEventListener('click',handleClick);
-sortear.addEventListener('click',sortearUser)
+sortear.addEventListener('click',sortearUser);
