@@ -1,13 +1,11 @@
 
 ![RosaNegro (1)](https://github.com/user-attachments/assets/d52ac99c-e51e-4e8f-a97b-f6aa6d2b4357)
-<div display="flex">
+
 <p align="left">
     <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
-</p>
-<p align="left">
     <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
 </p>
-    
+
 </div>
 
 <h1 aling=center>Challenge amigo secreto</h1>
